@@ -1,0 +1,65 @@
+{
+  "id": "com.microsoft.azuredevops",
+  "version": "1.0.0",
+  "compatibility": ">=2.1.1",
+  "sdk": 2,
+  "name": {
+    "en": "Azure DevOps"
+  },
+  "description": {
+    "en": "Build and deploy updates for Azure DevOps"
+  },
+  "category": [
+    "tools"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "brandColor": "#0078d4",
+  "author": {
+    "name": "Rickard L",
+    "email": "rickard@lyrenius.se"
+  },
+  "drivers": [
+    {
+      "id": "azure-devops-project",
+      "name": {
+        "en": "Azure DevOps Project"
+      },
+      "class": "homealarm",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "images": {
+        "large": "/drivers/azure-devops-project/assets/images/large.png",
+        "small": "/drivers/azure-devops-project/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "login_azure_devops",
+          "template": "login_credentials",
+          "navigation": {
+            "next": "list_projects"
+          },
+          "options": {
+            "usernameLabel": {"en": "Organization"},
+            "passwordLabel": {"en": "PAT token"}
+          }
+        },
+        {
+          "id": "list_projects",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_projects"
+          }
+        },
+        {
+          "id": "add_projects",
+          "template": "add_devices"
+        }
+      ]
+    }
+  ]
+}

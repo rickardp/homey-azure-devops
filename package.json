@@ -1,0 +1,8 @@
+{
+  "name": "azuredevops",
+  "version": "1.0.0",
+  "description": "Azure DevOps for Homey",
+  "dependencies": {
+    "azure-devops-node-api": "^9.0.1"
+  }
+}
